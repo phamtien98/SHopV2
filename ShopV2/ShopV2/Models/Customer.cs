@@ -8,26 +8,31 @@ namespace ShopV2.Models
 
     public partial class Customer
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Customer()
-        {
-            Orders = new HashSet<Order>();
-        }
+
 
         [Key]
-        [StringLength(20)]
-        public string cusPhone { get; set; }
-
-        [StringLength(200)]
+        [Column(Order = 1)]
+        [StringLength(50)]
         public string cusFullName { get; set; }
 
-        [StringLength(100)]
-        public string cusEmail { get; set; }
+        [Key]
+        [Column(Order = 2)]
+        [StringLength(50)]
+        public string password { get; set; }
 
-        [StringLength(500)]
+        [Key]
+        [Column(Order = 3)]
+        [StringLength(50)]
+        public string cusPhone { get; set; }
+
+        [Key]
+        [Column(Order = 4)]
+        [StringLength(50)]
+        public string cusMail { get; set; }
+
+        [Key]
+        [Column(Order = 5)]
+        [StringLength(50)]
         public string cusAddress { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Orders { get; set; }
     }
 }

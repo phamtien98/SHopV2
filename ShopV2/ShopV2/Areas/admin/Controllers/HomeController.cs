@@ -20,7 +20,8 @@ namespace ShopV2.Areas.admin.Controllers
             }
             else
             {
-               return View();
+                var model = db.OrderDetails.ToList();
+               return View(model);
             }
 
         }

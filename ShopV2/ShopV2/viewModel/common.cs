@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace ShopV2.viewModel
 {
-    public class LoginModel
+    public static class common
     {
-        public String phoneNum { get; set; }
-        public String password { get; set; }
+        public const String UserSesssion = "UserSession";
     }
 }

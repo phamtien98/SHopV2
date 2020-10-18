@@ -33,7 +33,7 @@ namespace ShopV2.Controllers
                 //nếu có số điện thoại trong db rồi
                 //cập nhật thông tin và lưu
                 cus.cusFullName = fullname;
-                cus.cusEmail = email;
+                cus.cusMail = email;
                 cus.cusAddress = address;
                 db.Entry(cus).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
@@ -44,7 +44,7 @@ namespace ShopV2.Controllers
                 //thêm thông tin và lưu
                 newCus.cusPhone = phone;
                 newCus.cusFullName = fullname;
-                newCus.cusEmail = email;
+                newCus.cusMail = email;
                 newCus.cusAddress = address;
                 db.Customers.Add(newCus);
                 db.SaveChanges();

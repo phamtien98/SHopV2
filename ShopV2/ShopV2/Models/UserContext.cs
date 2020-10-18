@@ -8,32 +8,24 @@ namespace ShopV2.Models
     public partial class UserContext : DbContext
     {
         public UserContext()
-            : base("name=UserContext1")
+            : base("name=UserContext")
         {
         }
 
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Comment> Comments { get; set; }
-        public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<Order> Orders { get; set; }
         public virtual DbSet<Producer> Producers { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<ProductType> ProductTypes { get; set; }
         public virtual DbSet<Rate> Rates { get; set; }
+        public virtual DbSet<Customer> Customers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Comment>()
                 .Property(e => e.proID)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Customer>()
-                .Property(e => e.cusPhone)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Customer>()
-                .Property(e => e.cusEmail)
                 .IsUnicode(false);
 
             modelBuilder.Entity<OrderDetail>()
@@ -100,6 +92,18 @@ namespace ShopV2.Models
 
             modelBuilder.Entity<Rate>()
                 .Property(e => e.proID)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Customer>()
+                .Property(e => e.password)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Customer>()
+                .Property(e => e.cusPhone)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<Customer>()
+                .Property(e => e.cusMail)
                 .IsUnicode(false);
         }
     }

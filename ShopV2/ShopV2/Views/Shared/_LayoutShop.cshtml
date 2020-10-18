@@ -86,9 +86,18 @@
                 <h1><a href="@Url.Action("Index", "Home")"><b>T<br>H<br>E</b>ShopOnline<span>Nhom 28</span></a></h1>
             </div>
             <div class="head-t">
-                <ul class="card">
-                    <li><a href="login.html"><i class="fa fa-user" aria-hidden="true"></i>Đăng nhập</a></li>
-                    <li><a href="register.html"><i class="fa fa-arrow-right" aria-hidden="true"></i>Đăng ký</a></li>
+                <ul class="card"> 
+                    @if (Session["accname"] != null)
+                    {
+
+                         <div>Heloo @Session["accname"] </div> 
+                        @Html.ActionLink("Logout", "Logout", "Customer")
+                    }
+                    else
+                    {
+                    <li><a href="@Url.Action("Login", "Customer")"><i class="fa fa-user" aria-hidden="true"></i>Đăng nhập</a></li>
+                    <li><a href="@Url.Action("Resgister", "Customer")"><i class="fa fa-arrow-right" aria-hidden="true"></i>Đăng ký</a></li>
+                    }
                 </ul>
             </div>
             @*<div class="header-ri">
@@ -194,8 +203,8 @@
             <div class="col-md-3 footer-grid">
                 <h3>Tài khoản</h3>
                 <ul>
-                    <li><a href="login.html">Đăng nhập</a></li>
-                    <li><a href="register.html">Đăng ký</a></li>
+                    <li><a href="@Url.Action("Login","Customer")">Đăng nhập</a></li>
+                    <li><a href="abcz.hmtl">Đăng ký</a></li>
                 </ul>
             </div>
             <div class="clearfix"></div>

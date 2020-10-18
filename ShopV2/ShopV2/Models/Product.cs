@@ -30,7 +30,7 @@ namespace ShopV2.Models
         public string proSize { get; set; }
 
         [StringLength(10)]
-        public String proPrice { get; set; }
+        public string proPrice { get; set; }
 
         public int? proDiscount { get; set; }
 

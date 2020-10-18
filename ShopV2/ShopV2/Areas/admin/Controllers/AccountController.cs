@@ -21,7 +21,7 @@ namespace ShopV2.Areas.admin.Controllers
         {
             try
             {
-                var model = dbLog.admins.SingleOrDefault(a => a.adAcc.Equals(adLogin.adAcc));
+                var model = dbLog.Administrators.SingleOrDefault(a => a.adAcc.Equals(adLogin.adAcc));
                 if (model != null)
                 {
                     if (model.adPass.Equals(adLogin.adPass))

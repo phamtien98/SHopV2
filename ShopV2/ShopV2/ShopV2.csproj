@@ -25,7 +25,6 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -209,6 +208,7 @@
     <Compile Include="Areas\admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\admin\Controllers\CustomerController.cs" />
     <Compile Include="Areas\admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\admin\Controllers\OrderController.cs" />
     <Compile Include="Areas\admin\Controllers\ProducerController.cs" />
     <Compile Include="Areas\admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\admin\Controllers\ProductTypeController.cs" />
@@ -246,6 +246,8 @@
     <Compile Include="Repository\ProductDAO.cs" />
     <Compile Include="Repository\ShopDAO.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="viewModel\common.cs" />
+    <Compile Include="viewModel\LoginModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\admin\Content\data\flot-data.js" />
@@ -363,6 +365,15 @@
     <Content Include="Content\js\jstarbox.js" />
     <Content Include="Content\js\modernizr.custom.js" />
     <Content Include="Content\js\move-top.js" />
+    <Content Include="Content\login\css\style.css" />
+    <Content Include="Content\login\images\banner1.jpg" />
+    <Content Include="Content\login\images\fac.png" />
+    <Content Include="Content\login\images\l.png" />
+    <Content Include="Content\login\images\m.png" />
+    <Content Include="Content\login\images\reg-img.jpg" />
+    <Content Include="Content\login\images\tick.png" />
+    <Content Include="Content\login\images\twitter.png" />
+    <Content Include="Content\login\js\jquery.min.js" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -497,6 +508,7 @@
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\admin\Views\Order\Index.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -607,8 +619,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutShop.cshtml" />
     <Content Include="Views\GioHang\Index.cshtml" />
@@ -667,10 +677,12 @@
     <Content Include="vendor\font-awesome\scs\_stacked.scss" />
     <Content Include="vendor\font-awesome\scs\_variables.scss" />
     <Content Include="vendor\font-awesome\scs\font-awesome.scss" />
+    <Content Include="Views\Customer\Login.cshtml" />
+    <Content Include="Views\Customer\Resgister.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Customer\" />
+    <Folder Include="Views\common\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

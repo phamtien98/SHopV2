@@ -1,0 +1,79 @@
+﻿
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Đăng Ký</title>
+    <script src="~/Content/login/js/jquery.min.js"></script>
+    <!-- Custom Theme files -->
+    <link href="~/Content/login/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- for-mobile-apps -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords"
+          content="Classy Login form Responsive, Login form web template, Sign up Web Templates, Flat Web Templates, Login signup Responsive web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <!-- //for-mobile-apps -->
+</head>
+
+<body>
+    <!--header start here-->
+    <div class="header">
+        <div class="header-main">
+            <h1>Đăng Ký</h1>
+            <div class="header-bottom">
+                <div class="header-right w3agile">
+
+                    <div class="header-left-bottom agileinfo">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.AntiForgeryToken()
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        <form action="#" method="post">
+                            <input type="text" value="" name="cusFullName" onfocus="this.value = '';" placeholder="Full name"
+                                   onblur="if (this.value == '') {this.value = 'Full name';}" />
+                            <input type="password" value="" name="password" placeholder="Password" onfocus="this.value = '';"
+                                   onblur="if (this.value == '') {this.value = 'password';}" />
+                            <input type="password" value="" name="cf_password" placeholder="Confirm password"
+                                   onfocus="this.value = '';"
+                                   onblur="if (this.value == '') {this.value = 'cf_password';}" />
+                            <input type="text" value="" name="cusPhone" onfocus="this.value = '';" placeholder="Phone"
+                                   onblur="if (this.value == '') {this.value = 'phonecall';}" />
+                            <input type="text" value="" name="cusMail" onfocus="this.value = '';" placeholder="Mail"
+                                   onblur="if (this.value == '') {this.value = 'Mail';}" />
+                            <input type="text" value="" name="cusAddress" onfocus="this.value = '';" placeholder="Address"
+                                   onblur="if (this.value == '') {this.value = 'Address';}" />
+
+                            <input type="submit" value="Đăng Ký">
+                        </form>
+                        }
+                        <div class="header-left-top">
+                            <div class="sign-up">
+                                <h2>or</h2>
+                            </div>
+
+                        </div>
+                        <div class="header-social wthree">
+                            <a href="#" class="face">
+                                <h5>Facebook</h5>
+                            </a>
+                            <a href="#" class="twitt">
+                                <h5>Twitter</h5>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--header end here-->
+    <div class="copyright">
+        <p>© 2020 TEAM 28. All rights reserved </p>
+    </div>
+    <!--footer end here-->
+</body>
+
+</html>

@@ -1,20 +1,15 @@
-﻿@model IEnumerable<ShopV2.Areas.admin.Models.Customer>
+﻿@model IEnumerable< ShopV2.Areas.admin.Models.Order>
 @{
-    ViewBag.Title = "Thông tin khách hàng";
+    ViewBag.Title = "Thông Tin các đơn hàng";
     Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Danh mục</h2>
-<div class="text-warning">
-    @ViewBag.CusError
-</div>
-<hr />
 <div>
     <div class="panel panel-default">
         <div class="panel-heading">
-            <a class="btn btn-primary btn-default" href="@Url.Action("Index", "Customer")" role="button">Làm mới</a>
+            <a class="btn btn-primary btn-default" href="@Url.Action("Index", "Order")" role="button">Làm mới</a>
             <div class="form-group input-group navbar-right">
-                @using (Ajax.BeginForm("Index", "Customer", new AjaxOptions { InsertionMode = InsertionMode.Replace, HttpMethod = "Get" }))
+                @using (Ajax.BeginForm("Index", "Order", new AjaxOptions { InsertionMode = InsertionMode.Replace, HttpMethod = "Get" }))
                 {
                     <input type="search" name="name" class="form-control" style="width:300px" placeholder="Nhập số điện thoại khách hàng..." />
                     <button class="btn btn-success" type="submit">
@@ -29,10 +24,11 @@
                     <thead>
                         <tr>
                             <th>#</th>
-                            <th>Số điện thoại</th>
-                            <th>Họ và tên</th>
-                            <th>Email</th>
-                            <th>Địa chỉ</th>
+                            <th>Mã Đơn Hàng     </th>
+                            <th>Số Điện Thoại</th>
+                            <th>Tin Nhắn</th>
+                            <th>Thời Gian</th>
+                            <th>Tình Trạng</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -42,10 +38,24 @@
                             i++;
                             <tr>
                                 <td>@i</td>
+                                <td>@Html.DisplayFor(modelItem => item.orderID)</td>
                                 <td>@Html.DisplayFor(modelItem => item.cusPhone)</td>
-                                <td>@Html.DisplayFor(modelItem => item.cusFullName)</td>
-                                <td>@Html.DisplayFor(modelItem => item.cusMail)</td>
-                                <td>@Html.DisplayFor(modelItem => item.cusAddress)</td>
+                                <td>@Html.DisplayFor(modelItem => item.orderMessage)</td>
+                                <td>@Html.DisplayFor(modelItem => item.orderDateTime)</td>
+                                <td>
+                                    @if (item.orderStatus.Equals("0"))
+                                    {
+                                        <p>Chưa Thanh Toán</p>
+
+                                    }
+                                    else
+                                    {
+                                        <p>Đã Thanh Toán</p>
+                                    }
+                                </td>  
+                                
+
+                                
                             </tr>
                         }
                     </tbody>
@@ -57,3 +67,4 @@
     </div>
     <!-- /.panel -->
 </div>
+

@@ -77,6 +77,7 @@ namespace ShopV2.Areas.admin.Controllers
                                 dbPdc.Producers.Add(createPdc);
                                 dbPdc.SaveChanges();
                                 ViewBag.CreatePdcError = "Thêm hãng sản xuất thành công.";
+                                return RedirectToAction("Index", "Product");
                             }
                         }
                     }
